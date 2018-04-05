@@ -1,0 +1,42 @@
+---
+# http://yaml.org/type/map.html -----------------------------------------------#
+persons:
+  - name: Staff Creativa
+    lastname: Evans
+    id: 39467890
+
+  - name: Staff Creativa
+    lastname: Connors
+    id: 78694500
+
+  - name: Staff Creativa
+    lastname: Atom
+    id: 38784520
+
+
+# http://yaml.org/type/bool.html ----------------------------------------------#
+bool:
+  - true
+  - false
+
+
+# http://yaml.org/type/float.html ---------------------------------------------#
+float: 6.852
+
+
+# http://yaml.org/type/int.html -----------------------------------------------#
+int: 685230
+
+
+# http://yaml.org/type/str.html -----------------------------------------------#
+string: >
+  Esto es un texto de prueba, con el único proposito de servir de muestra
+  al momento de usar Yaml como objeto de data...
+
+
+# http://yaml.org/type/timestamp.html -----------------------------------------#
+timestamp:
+  canonical: 2018-04-15T02:59:43.1Z
+
+
+title: Staff Creativa

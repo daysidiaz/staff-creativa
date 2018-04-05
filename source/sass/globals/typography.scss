@@ -1,0 +1,34 @@
+// Font Path
+// --------------------------
+$font-path: 'fonts';
+$version: 1.0;
+
+@font-face {
+  font-family: 'Noway-Regular';
+  src:url("#{$font-path}/Noway-Regular.eot?v=#{$version}");
+  src:url("#{$font-path}/Noway-Regular.eot?v=#{$version}#iefix") format("embedded-opentype"),
+      url("#{$font-path}/Noway-Regular.ttf?v=#{$version}") format("truetype"),
+      url("#{$font-path}/Noway-Regular.woff?v=#{$version}") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Ultra-Italic';
+  src:url("#{$font-path}/Gotham-Ultra-Italic.eot?v=#{$version}");
+  src:url("#{$font-path}/Gotham-Ultra-Italic.eot?v=#{$version}#iefix") format("embedded-opentype"),
+      url("#{$font-path}/Gotham-Ultra-Italic.ttf?v=#{$version}") format("truetype"),
+      url("#{$font-path}/Gotham-Ultra-Italic.woff?v=#{$version}") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Narrow-Medium';
+  src:url("#{$font-path}/Gotham-Narrow-Medium.eot?v=#{$version}");
+  src:url("#{$font-path}/Gotham-Narrow-Medium.eot?v=#{$version}#iefix") format("embedded-opentype"),
+      url("#{$font-path}/Gotham-Narrow-Medium.ttf?v=#{$version}") format("truetype"),
+      url("#{$font-path}/Gotham-Narrow-Medium.woff?v=#{$version}") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}

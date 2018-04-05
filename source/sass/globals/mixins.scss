@@ -1,0 +1,24 @@
+/* Calc */
+@mixin calc($property, $expression) {
+
+  #{$property}: -webkit-calc( #{$expression} );
+  #{$property}:    -moz-calc( #{$expression} );
+  #{$property}:         calc( #{$expression} );
+}
+
+/* Transition */
+@mixin transition($args...) {
+
+  -webkit-transition: $args;
+    -moz-transition: $args;
+      -ms-transition: $args;
+        transition: $args;
+}
+
+/* Rotate */
+@mixin rotate($degree) {
+
+  -webkit-transform: rotate( #{$degree}deg ); /* Chrome, Safari, Opera */
+    -ms-transform: rotate( #{$degree}deg ); /* IE 9 */
+      transform: rotate( #{$degree}deg );
+}
