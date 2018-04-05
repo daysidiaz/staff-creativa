@@ -107,24 +107,12 @@ gulp.task('styles', function() {
 });
 
 
-/* Optimizar imagenes */
-gulp.task('optimages', function() {
+/* imagenes */
+gulp.task('images', function() {
   return gulp.src('source/images/*.{png,jpg,jpeg,gif,svg}')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(imagemin({
-      progressive: true,
-      interlaced: true,
-      optimizationLevel: 3,
-      svgoPlugins: [{
-        removeViewBox: false
-      }],
-      use: [pngquant({
-        quality: '65-80',
-        speed: 4
-      })]
-    }))
-    .pipe(size())
-    .pipe(gulp.dest(outputDir + '/images'));
+    .pipe(gulp.dest(outputDir + '/images'))
+    .pipe(connect.reload());
 });
 
 
@@ -133,6 +121,7 @@ gulp.task('watch', function() {
   gulp.watch('source/layouts/**/*.pug', ['templates']);
   gulp.watch('source/javascript/**/*.js', ['js']);
   gulp.watch('source/javascript/plugins/*.js', ['vendor']);
+  gulp.watch('source/images/*.{png,jpg,jpeg,gif,svg}', ['images']);
   gulp.watch('source/sass/**/*.scss', ['styles']);
 });
 
@@ -152,7 +141,7 @@ var taskBuild = [
   'js',
   'vendor',
   'styles',
-  'optimages'
+  'images',
 ];
 
 var taskDefault = [
@@ -161,6 +150,7 @@ var taskDefault = [
   'js',
   'vendor',
   'styles',
+  'images',
   'watch',
   'connect-server'
 ];
