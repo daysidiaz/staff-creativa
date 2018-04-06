@@ -115,6 +115,13 @@ gulp.task('images', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('fonts', function() {
+  return gulp.src('source/sass/globals/fonts/*.{otf,ttf,woff,woff2,svg}')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(gulp.dest(outputDir + '/css/fonts'))
+    .pipe(connect.reload());
+});
+
 
 gulp.task('watch', function() {
   gulp.watch('source/data/**/*.yaml', ['data', 'templates']);
@@ -123,6 +130,7 @@ gulp.task('watch', function() {
   gulp.watch('source/javascript/plugins/*.js', ['vendor']);
   gulp.watch('source/images/*.{png,jpg,jpeg,gif,svg}', ['images']);
   gulp.watch('source/sass/**/*.scss', ['styles']);
+  gulp.watch('source/sass/fonts/*.{otf,ttf,woff,woff2,svg}', ['styles']);
 });
 
 
@@ -141,6 +149,7 @@ var taskBuild = [
   'js',
   'vendor',
   'styles',
+  'fonts',
   'images',
 ];
 
@@ -150,6 +159,7 @@ var taskDefault = [
   'js',
   'vendor',
   'styles',
+  'fonts',
   'images',
   'watch',
   'connect-server'
