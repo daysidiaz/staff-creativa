@@ -1,0 +1,14 @@
+.staff {
+
+  &__container {
+
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+
+    @media only screen and (max-width: 1366px) {
+
+      max-width: 960px;
+    }
+  }
+}

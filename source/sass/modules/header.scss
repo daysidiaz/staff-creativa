@@ -1,0 +1,163 @@
+.staff {
+
+  &__container {
+
+    height: 100%;
+  }
+
+  &__header {
+
+    background-color: #111;
+    height: 100px;
+
+    @media only screen and (max-width: 1366px) {
+
+      height: 85px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+
+      height: 65px;
+    }
+
+    &__container {
+
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    .logo {
+
+      @media only screen and (max-width: 1366px) {
+
+        height: 75px;
+      }
+
+      @media only screen and (max-width: 1024px) {
+
+        height: 65px;
+      }
+    }
+
+
+
+    &__close {
+
+      span {
+
+        background-color: #cad743;
+        display: block;
+        height: 5px;
+        transition: transform 0.25s ease-out;
+        width: 45px;
+
+        &:not(:first-child):not(:last-child) {
+
+          margin: 5px auto;
+        }
+      }
+    }
+
+    .close {
+
+      cursor: pointer;
+    }
+
+    &__menu {
+
+      height: 100%;
+
+      .menu {
+
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+
+        &,
+        &__option {
+
+          height: 100%;
+        }
+      }
+
+      .option {
+
+        align-items: center;
+        border-bottom: 7px solid transparent;
+        color: #fff;
+        display: flex;
+        font-family: $font-noway;
+        font-size: 18px;
+        height: 100%;
+        justify-content: center;
+        padding: 7px 35px 0;
+        text-decoration: none;
+
+        @media only screen and (max-width: 1366px) {
+
+          font-size: 16px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+
+          border-bottom: 5px solid transparent;
+          font-size: 14px;
+          padding: 7px 30px 0;
+        }
+
+        &--active {
+
+          border-bottom-color: #81d4ae;
+        }
+
+        &:hover {
+
+          border-bottom-color: #cad743;
+        }
+      }
+    }
+  }
+}
+
+#menuchk {
+
+  &:checked {
+
+    & + .staff__header {
+
+      .staff {
+
+        &__header {
+
+          &__close {
+
+            span {
+
+              background-color: #fff;
+              transition: transform 0.25s ease-out;
+
+              &:first-child {
+
+                transform: rotate(45deg) translate(4px);
+              }
+
+              &:last-child {
+
+                transform: rotate(-45deg) translate(4px);
+              }
+
+              &:not(:first-child):not(:last-child) {
+                height: 0;
+                margin: 0;
+                width: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
