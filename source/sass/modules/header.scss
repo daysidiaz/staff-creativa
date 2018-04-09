@@ -9,6 +9,7 @@
 
     background-color: #111;
     height: 100px;
+    padding: 0 30px;
 
     @media only screen and (max-width: 1366px) {
 
@@ -45,6 +46,13 @@
 
     &__close {
 
+      display: none;
+
+      @media only screen and (max-width: 961px) {
+
+        display: block;
+      }
+
       span {
 
         background-color: #cad743;
@@ -69,6 +77,16 @@
 
       height: 100%;
 
+      @media only screen and (max-width: 960px) {
+
+        background: #111;
+        display: flex;
+        height: 100vh;
+        left: 100%;
+        position: fixed;
+        width: 100%;
+      }
+
       .menu {
 
         align-items: center;
@@ -80,6 +98,11 @@
         &__option {
 
           height: 100%;
+
+          @media only screen and (max-width: 960px) {
+
+            height: auto;
+          }
         }
       }
 
@@ -111,11 +134,20 @@
         &--active {
 
           border-bottom-color: #81d4ae;
+
+          @media only screen and (max-width: 960px) {
+            color: #cad743;
+            border: none;
+          }
         }
 
         &:hover {
 
           border-bottom-color: #cad743;
+
+          @media only screen and (max-width: 960px) {
+            border: none;
+          }
         }
       }
     }
@@ -134,9 +166,12 @@
 
           &__close {
 
+            position: relative;
+            z-index: 999;
+
             span {
 
-              background-color: #fff;
+              background-color: #cad743;
               transition: transform 0.25s ease-out;
 
               &:first-child {
@@ -150,9 +185,38 @@
               }
 
               &:not(:first-child):not(:last-child) {
+
                 height: 0;
                 margin: 0;
                 width: 0;
+              }
+            }
+          }
+
+          &__menu {
+
+            bottom: 0;
+            left: 0;
+            transition: left 0.25s ease-out,
+              bottom 0.25s ease-out;
+
+            .menu {
+
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              &__option {
+
+                padding: 0 0 16px;
+
+                .option {
+
+                  @media only screen and (max-width: 960px) {
+
+                    font-size: 22px;
+                  }
+                }
               }
             }
           }
