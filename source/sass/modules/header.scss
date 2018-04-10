@@ -9,7 +9,12 @@
 
     background-color: #111;
     height: 100px;
+    left: 0;
     padding: 0 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 
     @media only screen and (max-width: 1366px) {
 
@@ -55,7 +60,7 @@
 
       span {
 
-        background-color: #cad743;
+        background-color: $colorlight-green;
         display: block;
         height: 5px;
         transition: transform 0.25s ease-out;
@@ -76,10 +81,14 @@
     &__menu {
 
       height: 100%;
+      bottom: 0;
+      left: 0;
+      transition: left 0.25s ease-out,
+              bottom 0.25s ease-out;
 
       @media only screen and (max-width: 960px) {
 
-        background: #111;
+        background: #00373e;
         display: flex;
         height: 100vh;
         left: 100%;
@@ -94,14 +103,21 @@
         height: 100%;
         justify-content: space-between;
 
+        @media only screen and (max-width: 960px) {
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
         &,
         &__option {
 
           height: 100%;
 
           @media only screen and (max-width: 960px) {
-
             height: auto;
+            padding: 0 0 40px;
           }
         }
       }
@@ -131,22 +147,27 @@
           padding: 7px 30px 0;
         }
 
+        @media only screen and (max-width: 960px) {
+          font-size: 35px;
+          letter-spacing: 4px;
+        }
+
         &--active {
 
-          border-bottom-color: #81d4ae;
+          border-bottom-color: $color-active;
 
           @media only screen and (max-width: 960px) {
-            color: #cad743;
-            border: none;
+            color: $colorlight-green;
+            border: 0;
           }
         }
 
         &:hover {
 
-          border-bottom-color: #cad743;
+          border-bottom-color: $colorlight-green;
 
           @media only screen and (max-width: 960px) {
-            border: none;
+            border: 0;
           }
         }
       }
@@ -171,7 +192,7 @@
 
             span {
 
-              background-color: #cad743;
+              background-color: $colorlight-green;
               transition: transform 0.25s ease-out;
 
               &:first-child {
@@ -208,13 +229,14 @@
 
               &__option {
 
-                padding: 0 0 16px;
+                padding: 0 0 40px;
 
                 .option {
 
                   @media only screen and (max-width: 960px) {
 
-                    font-size: 22px;
+                    font-size: 35px;
+                    letter-spacing: 4px;
                   }
                 }
               }
